@@ -1,0 +1,15 @@
+#!/usr/bin/expect -f
+
+spawn telnet [lindex $argv 0]
+expect "ogin:"
+send "root\r"
+expect "assword:"
+send "enfortit\r"
+expect  {
+\\#    exit\r
+>    exit\r
+}
+#send "exit\r"
+expect eof
+exit
+
